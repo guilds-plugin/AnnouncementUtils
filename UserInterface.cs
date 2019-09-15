@@ -38,7 +38,7 @@ namespace Announcements {
                     mysqlOutput += "\\n";
                 }
                 else {
-                    if (line.Contains("Features") || line.Contains("Bug Fixes") || line.Contains("Changes")) {
+                    if (IsHeader(line)) {
                         mysqlOutput += "&6&l" + line + "\\n";
                     }
                     else {
@@ -62,7 +62,7 @@ namespace Announcements {
                     uxDiscordOutputBox.AppendText(Environment.NewLine);
                 }
                 else {
-                    if (line.Contains("Features") || line.Contains("Bug Fixes") || line.Contains("Changes")) {
+                    if (IsHeader(line)) {
                         uxDiscordOutputBox.AppendText("**" + line + "**");
                         uxDiscordOutputBox.AppendText(Environment.NewLine);
                     } else {
@@ -84,7 +84,7 @@ namespace Announcements {
                     uxHTMLOutputBox.AppendText(Environment.NewLine);
                 }
                 else {
-                    if (line.Contains("Features") || line.Contains("Bug Fixes") || line.Contains("Changes")) {
+                    if (IsHeader(line)) {
                         uxHTMLOutputBox.AppendText("[B]" + line + "[/B]");
                         uxHTMLOutputBox.AppendText(Environment.NewLine);
                     }
@@ -156,6 +156,15 @@ namespace Announcements {
             uxDiscordOutputBox.Clear();
             uxMySQLOutputBox.Clear();
             uxHTMLOutputBox.Clear();
+        }
+
+        /// <summary>
+        /// Checks if a line is a header or not for outputs
+        /// </summary>
+        /// <param name="line"></param>
+        /// <returns></returns>
+        private bool IsHeader(string line) {
+            return line.Contains("Features") || line.Contains("Bug Fixes") || line.Contains("Changes");
         }
     }
 }
