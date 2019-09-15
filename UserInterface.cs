@@ -16,6 +16,11 @@ namespace Announcements {
             this.Icon = Properties.Resources.icon;
         }
 
+        /// <summary>
+        /// Handles converting raw input text to multiple different output versions
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UxConvert_Click(object sender, EventArgs e) {
             // Set the current text in the input box to a variable
             string originalText = uxRawInputBox.Text;
@@ -92,6 +97,11 @@ namespace Announcements {
             // HTML OUTPUT BOX END
         }
 
+        /// <summary>
+        /// Handles opening a file into the announcements
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UxOpenMenuButton_Click(object sender, EventArgs e) {
             if (uxOpenFileDialog.ShowDialog() == DialogResult.OK) {
                 try {
@@ -109,6 +119,11 @@ namespace Announcements {
             }
         }
 
+        /// <summary>
+        /// Handles saving announcements to a file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UxSaveAsMenuButton_Click(object sender, EventArgs e) {
             if (uxSaveFileDialog.ShowDialog() == DialogResult.OK) {
                 try {
@@ -129,6 +144,11 @@ namespace Announcements {
             MessageBox.Show("The following error occurred:" + ex.ToString());
         }
 
+        /// <summary>
+        /// Clears all current text in the program
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UxClearButton_Click(object sender, EventArgs e) {
             uxVersionBox.Clear();
             uxUpdateTitleBox.Clear();
