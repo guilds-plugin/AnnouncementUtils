@@ -66,6 +66,11 @@ namespace Announcements {
             // HTML OUTPUT BOX START
             OutputMethod(list, uxHTMLOutputBox, "[B]", "[/B]");
             // HTML OUTPUT BOX END
+
+
+            // Set suggested file name for saving & default ext
+            uxSaveFileDialog.DefaultExt = "txt";
+            uxSaveFileDialog.FileName = uxVersionBox.Text;
         }
 
         /// <summary>
