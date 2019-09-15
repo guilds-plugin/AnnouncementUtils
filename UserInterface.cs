@@ -170,6 +170,9 @@ namespace Announcements {
             box.AppendText(Environment.NewLine);
         }
 
+        /// <summary>
+        /// Clear all text boxes
+        /// </summary>
         private void ClearAll() {
             uxVersionBox.Clear();
             uxUpdateTitleBox.Clear();
