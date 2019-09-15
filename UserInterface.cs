@@ -56,21 +56,7 @@ namespace Announcements {
             uxDiscordOutputBox.AppendText(uxUpdateTitleBox.Text);
             Skip(uxDiscordOutputBox);
             Skip(uxDiscordOutputBox);
-            for (int i = 0; i < list.Length; i++) {
-                string line = list[i];
-                if (string.IsNullOrWhiteSpace(line)) {
-                    Skip(uxDiscordOutputBox);
-                }
-                else {
-                    if (IsHeader(line)) {
-                        uxDiscordOutputBox.AppendText("**" + line + "**");
-                        Skip(uxDiscordOutputBox);
-                    } else {
-                        uxDiscordOutputBox.AppendText("- " + line);
-                        Skip(uxDiscordOutputBox);
-                    }
-                }
-            }
+            OutputMethod(list, uxDiscordOutputBox, "**", "**");
             Skip(uxDiscordOutputBox);
             uxDiscordOutputBox.AppendText("**Guilds v" + uxVersionBox.Text + " is now live!**");
             Skip(uxDiscordOutputBox);
@@ -78,23 +64,34 @@ namespace Announcements {
             // DISCORD OUTPUT BOX END
 
             // HTML OUTPUT BOX START
+            OutputMethod(list, uxHTMLOutputBox, "[B]", "[/B]");
+            // HTML OUTPUT BOX END
+        }
+
+        /// <summary>
+        /// Handles looping through the lines and generating the output
+        /// </summary>
+        /// <param name="list">The list of lines</param>
+        /// <param name="box">The box to modify the output of</param>
+        /// <param name="startText">The start text before headers</param>
+        /// <param name="endText">The end text after headers</param>
+        private void OutputMethod(string[] list, TextBox box, string startText, string endText) {
             for (int i = 0; i < list.Length; i++) {
                 string line = list[i];
                 if (string.IsNullOrWhiteSpace(line)) {
-                    Skip(uxHTMLOutputBox);
+                    Skip(box);
                 }
                 else {
                     if (IsHeader(line)) {
-                        uxHTMLOutputBox.AppendText("[B]" + line + "[/B]");
-                        Skip(uxHTMLOutputBox);
+                        box.AppendText(startText + line + endText);
+                        Skip(box);
                     }
                     else {
-                        uxHTMLOutputBox.AppendText("- " + line);
-                        Skip(uxHTMLOutputBox);
+                        box.AppendText("- " + line);
+                        Skip(box);
                     }
                 }
             }
-            // HTML OUTPUT BOX END
         }
 
         /// <summary>
