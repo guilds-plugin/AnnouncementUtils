@@ -51,29 +51,29 @@ namespace Announcements {
 
             // DISCORD OUTPUT BOX START
             uxDiscordOutputBox.AppendText("**UPDATE**");
-            uxDiscordOutputBox.AppendText(Environment.NewLine);
-            uxDiscordOutputBox.AppendText(Environment.NewLine);
+            Skip(uxDiscordOutputBox);
+            Skip(uxDiscordOutputBox);
             uxDiscordOutputBox.AppendText(uxUpdateTitleBox.Text);
-            uxDiscordOutputBox.AppendText(Environment.NewLine);
-            uxDiscordOutputBox.AppendText(Environment.NewLine);
+            Skip(uxDiscordOutputBox);
+            Skip(uxDiscordOutputBox);
             for (int i = 0; i < list.Length; i++) {
                 string line = list[i];
                 if (string.IsNullOrWhiteSpace(line)) {
-                    uxDiscordOutputBox.AppendText(Environment.NewLine);
+                    Skip(uxDiscordOutputBox);
                 }
                 else {
                     if (IsHeader(line)) {
                         uxDiscordOutputBox.AppendText("**" + line + "**");
-                        uxDiscordOutputBox.AppendText(Environment.NewLine);
+                        Skip(uxDiscordOutputBox);
                     } else {
                         uxDiscordOutputBox.AppendText("- " + line);
-                        uxDiscordOutputBox.AppendText(Environment.NewLine);
+                        Skip(uxDiscordOutputBox);
                     }
                 }
             }
-            uxDiscordOutputBox.AppendText(Environment.NewLine);
+            Skip(uxDiscordOutputBox);
             uxDiscordOutputBox.AppendText("**Guilds v" + uxVersionBox.Text + " is now live!**");
-            uxDiscordOutputBox.AppendText(Environment.NewLine);
+            Skip(uxDiscordOutputBox);
             uxDiscordOutputBox.AppendText("Plugin Page: https://www.spigotmc.org/resources/guilds.66176/");
             // DISCORD OUTPUT BOX END
 
@@ -81,16 +81,16 @@ namespace Announcements {
             for (int i = 0; i < list.Length; i++) {
                 string line = list[i];
                 if (string.IsNullOrWhiteSpace(line)) {
-                    uxHTMLOutputBox.AppendText(Environment.NewLine);
+                    Skip(uxHTMLOutputBox);
                 }
                 else {
                     if (IsHeader(line)) {
                         uxHTMLOutputBox.AppendText("[B]" + line + "[/B]");
-                        uxHTMLOutputBox.AppendText(Environment.NewLine);
+                        Skip(uxHTMLOutputBox);
                     }
                     else {
                         uxHTMLOutputBox.AppendText("- " + line);
-                        uxHTMLOutputBox.AppendText(Environment.NewLine);
+                        Skip(uxHTMLOutputBox);
                     }
                 }
             }
@@ -165,6 +165,14 @@ namespace Announcements {
         /// <returns></returns>
         private bool IsHeader(string line) {
             return line.Contains("Features") || line.Contains("Bug Fixes") || line.Contains("Changes");
+        }
+
+        /// <summary>
+        /// Easy method to skip lines
+        /// </summary>
+        /// <param name="box"></param>
+        private void Skip(TextBox box) {
+            box.AppendText(Environment.NewLine);
         }
     }
 }
