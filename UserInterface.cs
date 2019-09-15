@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms;
 
 namespace Announcements {
     public partial class Announcements : Form {
         public Announcements() {
             InitializeComponent();
+            // Set the project icon to the icon in the resources folder
             this.Icon = Properties.Resources.icon;
         }
 
@@ -113,7 +107,7 @@ namespace Announcements {
                     uxVersionBox.Text = split[0];
                     uxUpdateTitleBox.Text = split[1];
                     uxRawInputBox.Text = split[2];
-          
+
                 }
                 catch (Exception ex) {
                     sendError(ex);
@@ -132,7 +126,8 @@ namespace Announcements {
                     string fn = uxSaveFileDialog.FileName;
                     string contents = uxVersionBox.Text + "," + uxUpdateTitleBox.Text + "," + uxRawInputBox.Text;
                     File.WriteAllText(fn, contents);
-                } catch(Exception ex) {
+                }
+                catch (Exception ex) {
                     sendError(ex);
                 }
             }
