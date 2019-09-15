@@ -46,11 +46,11 @@
             // uxVersionLabel
             // 
             this.uxVersionLabel.AutoSize = true;
-            this.uxVersionLabel.Location = new System.Drawing.Point(23, 60);
+            this.uxVersionLabel.Location = new System.Drawing.Point(65, 60);
             this.uxVersionLabel.Name = "uxVersionLabel";
-            this.uxVersionLabel.Size = new System.Drawing.Size(147, 19);
+            this.uxVersionLabel.Size = new System.Drawing.Size(51, 19);
             this.uxVersionLabel.TabIndex = 15;
-            this.uxVersionLabel.Text = "What version is this for?";
+            this.uxVersionLabel.Text = "Version";
             this.uxVersionLabel.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // uxVersionBox
@@ -88,11 +88,11 @@
             // uxUpdateTitleLabel
             // 
             this.uxUpdateTitleLabel.AutoSize = true;
-            this.uxUpdateTitleLabel.Location = new System.Drawing.Point(253, 60);
+            this.uxUpdateTitleLabel.Location = new System.Drawing.Point(295, 60);
             this.uxUpdateTitleLabel.Name = "uxUpdateTitleLabel";
-            this.uxUpdateTitleLabel.Size = new System.Drawing.Size(194, 19);
+            this.uxUpdateTitleLabel.Size = new System.Drawing.Size(80, 19);
             this.uxUpdateTitleLabel.TabIndex = 17;
-            this.uxUpdateTitleLabel.Text = "What is the title for this update?";
+            this.uxUpdateTitleLabel.Text = "Update Title";
             this.uxUpdateTitleLabel.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // uxUpdateTitleBox
