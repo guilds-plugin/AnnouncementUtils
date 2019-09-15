@@ -1,9 +1,11 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
+using MetroFramework.Controls;
+using MetroFramework.Forms;
 
 namespace Announcements {
-    public partial class Announcements : Form {
+    public partial class Announcements : MetroForm {
         public Announcements() {
             InitializeComponent();
             // Set the project icon to the icon in the resources folder
@@ -74,7 +76,7 @@ namespace Announcements {
         /// <param name="box">The box to modify the output of</param>
         /// <param name="startText">The start text before headers</param>
         /// <param name="endText">The end text after headers</param>
-        private void OutputMethod(string[] list, TextBox box, string startText, string endText) {
+        private void OutputMethod(string[] list, MetroTextBox box, string startText, string endText) {
             for (int i = 0; i < list.Length; i++) {
                 string line = list[i];
                 if (string.IsNullOrWhiteSpace(line)) {
@@ -100,6 +102,7 @@ namespace Announcements {
         /// <param name="e"></param>
         private void UxOpenMenuButton_Click(object sender, EventArgs e) {
             if (uxOpenFileDialog.ShowDialog() == DialogResult.OK) {
+                ClearAll();
                 try {
                     string fn = @uxOpenFileDialog.FileName;
                     string contents = File.ReadAllText(fn);
@@ -147,12 +150,7 @@ namespace Announcements {
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void UxClearButton_Click(object sender, EventArgs e) {
-            uxVersionBox.Clear();
-            uxUpdateTitleBox.Clear();
-            uxRawInputBox.Clear();
-            uxDiscordOutputBox.Clear();
-            uxMySQLOutputBox.Clear();
-            uxHTMLOutputBox.Clear();
+            ClearAll();
         }
 
         /// <summary>
@@ -168,8 +166,17 @@ namespace Announcements {
         /// Easy method to skip lines
         /// </summary>
         /// <param name="box"></param>
-        private void Skip(TextBox box) {
+        private void Skip(MetroTextBox box) {
             box.AppendText(Environment.NewLine);
+        }
+
+        private void ClearAll() {
+            uxVersionBox.Clear();
+            uxUpdateTitleBox.Clear();
+            uxRawInputBox.Clear();
+            uxDiscordOutputBox.Clear();
+            uxMySQLOutputBox.Clear();
+            uxHTMLOutputBox.Clear();
         }
     }
 }
