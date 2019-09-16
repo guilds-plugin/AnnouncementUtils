@@ -153,9 +153,9 @@
             this.uxRawInput.AutoSize = true;
             this.uxRawInput.Location = new System.Drawing.Point(134, 161);
             this.uxRawInput.Name = "uxRawInput";
-            this.uxRawInput.Size = new System.Drawing.Size(102, 19);
+            this.uxRawInput.Size = new System.Drawing.Size(99, 19);
             this.uxRawInput.TabIndex = 21;
-            this.uxRawInput.Text = "Insert Text Here:";
+            this.uxRawInput.Text = "Insert Text Here";
             this.uxRawInput.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // uxDiscordOuputLabel
@@ -163,9 +163,9 @@
             this.uxDiscordOuputLabel.AutoSize = true;
             this.uxDiscordOuputLabel.Location = new System.Drawing.Point(617, 161);
             this.uxDiscordOuputLabel.Name = "uxDiscordOuputLabel";
-            this.uxDiscordOuputLabel.Size = new System.Drawing.Size(101, 19);
+            this.uxDiscordOuputLabel.Size = new System.Drawing.Size(98, 19);
             this.uxDiscordOuputLabel.TabIndex = 22;
-            this.uxDiscordOuputLabel.Text = "Discord Output:";
+            this.uxDiscordOuputLabel.Text = "Discord Output";
             this.uxDiscordOuputLabel.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // uxHTMLOutputLabel
@@ -173,9 +173,9 @@
             this.uxHTMLOutputLabel.AutoSize = true;
             this.uxHTMLOutputLabel.Location = new System.Drawing.Point(1061, 161);
             this.uxHTMLOutputLabel.Name = "uxHTMLOutputLabel";
-            this.uxHTMLOutputLabel.Size = new System.Drawing.Size(91, 19);
+            this.uxHTMLOutputLabel.Size = new System.Drawing.Size(88, 19);
             this.uxHTMLOutputLabel.TabIndex = 23;
-            this.uxHTMLOutputLabel.Text = "HTML Output:";
+            this.uxHTMLOutputLabel.Text = "HTML Output";
             this.uxHTMLOutputLabel.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // uxMySQLOutputLabel
@@ -183,13 +183,16 @@
             this.uxMySQLOutputLabel.AutoSize = true;
             this.uxMySQLOutputLabel.Location = new System.Drawing.Point(1518, 161);
             this.uxMySQLOutputLabel.Name = "uxMySQLOutputLabel";
-            this.uxMySQLOutputLabel.Size = new System.Drawing.Size(99, 19);
+            this.uxMySQLOutputLabel.Size = new System.Drawing.Size(96, 19);
             this.uxMySQLOutputLabel.TabIndex = 24;
-            this.uxMySQLOutputLabel.Text = "MySQL Output:";
+            this.uxMySQLOutputLabel.Text = "MySQL Output";
             this.uxMySQLOutputLabel.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // uxRawInputBox
             // 
+            this.uxRawInputBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
@@ -341,7 +344,8 @@
             // Announcements
             // 
             this.AllowDrop = true;
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1813, 643);
             this.Controls.Add(this.uxSaveAsMenuButton);
             this.Controls.Add(this.uxOpenMenuButton);
@@ -359,6 +363,7 @@
             this.Controls.Add(this.uxUpdateTitleLabel);
             this.Controls.Add(this.uxVersionBox);
             this.Controls.Add(this.uxVersionLabel);
+            this.MinimumSize = new System.Drawing.Size(1813, 643);
             this.Name = "Announcements";
             this.Text = "Announcements";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
