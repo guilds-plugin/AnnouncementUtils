@@ -55,6 +55,18 @@ namespace Announcements {
             Skip(uxDiscordOutputBox);
             OutputMethod(list, uxDiscordOutputBox, "**", "**");
             Skip(uxDiscordOutputBox);
+            if (uxRequiresLanguageUpdate.Checked) {
+                uxDiscordOutputBox.AppendText("**Note:** This update requires language updates");
+                Skip(uxDiscordOutputBox);
+                uxDiscordOutputBox.AppendText("```");
+                Skip(uxDiscordOutputBox);
+                uxDiscordOutputBox.AppendText("1) guild console update-languages");
+                Skip(uxDiscordOutputBox);
+                uxDiscordOutputBox.AppendText("2) guild confirm");
+                Skip(uxDiscordOutputBox);
+                uxDiscordOutputBox.AppendText("```");
+                Skip(uxDiscordOutputBox);
+            }
             uxDiscordOutputBox.AppendText("**Guilds v" + uxVersionBox.Text + " is now live!**");
             Skip(uxDiscordOutputBox);
             uxDiscordOutputBox.AppendText("Plugin Page: https://www.spigotmc.org/resources/guilds.66176/");
@@ -181,6 +193,10 @@ namespace Announcements {
             uxDiscordOutputBox.Clear();
             uxMySQLOutputBox.Clear();
             uxHTMLOutputBox.Clear();
+        }
+
+        private void uxRequiresLanguageUpdate_CheckedChanged(object sender, EventArgs e) {
+
         }
     }
 }
