@@ -55,17 +55,8 @@ namespace Announcements {
             Skip(uxDiscordOutputBox);
             OutputMethod(list, uxDiscordOutputBox, "**", "**");
             Skip(uxDiscordOutputBox);
-            if (uxRequiresLanguageUpdate.Checked) {
-                uxDiscordOutputBox.AppendText("**Note:** This update requires language updates");
-                Skip(uxDiscordOutputBox);
-                uxDiscordOutputBox.AppendText("```");
-                Skip(uxDiscordOutputBox);
-                uxDiscordOutputBox.AppendText("1) guild console update-languages");
-                Skip(uxDiscordOutputBox);
-                uxDiscordOutputBox.AppendText("2) guild confirm");
-                Skip(uxDiscordOutputBox);
-                uxDiscordOutputBox.AppendText("```");
-                Skip(uxDiscordOutputBox);
+            if (LangUpdate()) {
+                ImplementLanguageMessage(uxDiscordOutputBox, "```", "```");
             }
             uxDiscordOutputBox.AppendText("**Guilds v" + uxVersionBox.Text + " is now live!**");
             Skip(uxDiscordOutputBox);
@@ -74,12 +65,43 @@ namespace Announcements {
 
             // HTML OUTPUT BOX START
             OutputMethod(list, uxHTMLOutputBox, "[B]", "[/B]");
+            Skip(uxHTMLOutputBox);
+            if (LangUpdate()) {
+                ImplementLanguageMessage(uxHTMLOutputBox, "[CODE]", "[/CODE]");
+            }
             // HTML OUTPUT BOX END
 
 
             // Set suggested file name for saving & default ext
             uxSaveFileDialog.DefaultExt = "txt";
             uxSaveFileDialog.FileName = uxVersionBox.Text;
+        }
+
+        /// <summary>
+        /// Easy way to check if language update or not
+        /// </summary>
+        /// <returns>Update contains language update or not</returns>
+        private bool LangUpdate() {
+            return uxRequiresLanguageUpdate.Checked;
+        }
+
+        /// <summary>
+        /// Handles generating the output text for letting users know about language updates
+        /// </summary>
+        /// <param name="box">The box to modify</param>
+        /// <param name="startText">The start text for the code</param>
+        /// <param name="endText">The end text for the code</param>
+        private void ImplementLanguageMessage(MetroTextBox box, string startText, string endText) {
+            box.AppendText("Note: This update requires langauge updates");
+            Skip(box);
+            box.AppendText(startText);
+            Skip(box);
+            box.AppendText("1) guild console update-languages");
+            Skip(box);
+            box.AppendText("2) guild confirm");
+            Skip(box);
+            box.AppendText(endText);
+            Skip(box);
         }
 
         /// <summary>
