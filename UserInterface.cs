@@ -194,7 +194,7 @@ namespace Announcements {
         /// <param name="line"></param>
         /// <returns></returns>
         private bool IsHeader(string line) {
-            return line.Contains("Features") || line.Contains("Bug Fixes") || line.Contains("Changes");
+            return line.Contains("Features") || line.Contains("Bug Fixes") || line.Contains("Changes") || line.Contains("Note") || line.Contains("Known Issues");
         }
 
         /// <summary>
