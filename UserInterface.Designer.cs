@@ -352,7 +352,6 @@
             this.uxRequiresLanguageUpdate.Text = "Require Language Update";
             this.uxRequiresLanguageUpdate.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.uxRequiresLanguageUpdate.UseSelectable = true;
-            this.uxRequiresLanguageUpdate.CheckedChanged += new System.EventHandler(this.uxRequiresLanguageUpdate_CheckedChanged);
             // 
             // Announcements
             // 

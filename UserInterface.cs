@@ -216,9 +216,5 @@ namespace Announcements {
             uxMySQLOutputBox.Clear();
             uxHTMLOutputBox.Clear();
         }
-
-        private void uxRequiresLanguageUpdate_CheckedChanged(object sender, EventArgs e) {
-
-        }
     }
 }
