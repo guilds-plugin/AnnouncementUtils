@@ -145,7 +145,7 @@ namespace Announcements {
                     uxVersionBox.Text = split[0];
                     uxUpdateTitleBox.Text = split[1];
                     uxRawInputBox.Text = split[2];
-
+                    uxRequiresLanguageUpdate.Checked = Convert.ToBoolean(split[3]);
                 }
                 catch (Exception ex) {
                     sendError(ex);
@@ -162,7 +162,7 @@ namespace Announcements {
             if (uxSaveFileDialog.ShowDialog() == DialogResult.OK) {
                 try {
                     string fn = uxSaveFileDialog.FileName;
-                    string contents = uxVersionBox.Text + "," + uxUpdateTitleBox.Text + "," + uxRawInputBox.Text;
+                    string contents = uxVersionBox.Text + "," + uxUpdateTitleBox.Text + "," + uxRawInputBox.Text + "," + uxRequiresLanguageUpdate.Checked;
                     File.WriteAllText(fn, contents);
                 }
                 catch (Exception ex) {
