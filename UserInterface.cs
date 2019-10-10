@@ -71,6 +71,9 @@ namespace Announcements {
             }
             // HTML OUTPUT BOX END
 
+            // Set character count
+            uxDiscordCount.Text = "Character Count: " + Convert.ToString(uxDiscordOutputBox.Text.Length) + "/2000";
+
 
             // Set suggested file name for saving & default ext
             uxSaveFileDialog.DefaultExt = "txt";

@@ -42,6 +42,7 @@
             this.uxOpenMenuButton = new MetroFramework.Controls.MetroButton();
             this.uxSaveAsMenuButton = new MetroFramework.Controls.MetroButton();
             this.uxRequiresLanguageUpdate = new MetroFramework.Controls.MetroCheckBox();
+            this.uxDiscordCount = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
             // uxVersionLabel
@@ -353,12 +354,23 @@
             this.uxRequiresLanguageUpdate.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.uxRequiresLanguageUpdate.UseSelectable = true;
             // 
+            // uxDiscordCount
+            // 
+            this.uxDiscordCount.AutoSize = true;
+            this.uxDiscordCount.Location = new System.Drawing.Point(467, 604);
+            this.uxDiscordCount.Name = "uxDiscordCount";
+            this.uxDiscordCount.Size = new System.Drawing.Size(152, 19);
+            this.uxDiscordCount.TabIndex = 32;
+            this.uxDiscordCount.Text = "Character Count: 0/2000";
+            this.uxDiscordCount.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
             // Announcements
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1813, 643);
+            this.Controls.Add(this.uxDiscordCount);
             this.Controls.Add(this.uxRequiresLanguageUpdate);
             this.Controls.Add(this.uxSaveAsMenuButton);
             this.Controls.Add(this.uxOpenMenuButton);
@@ -405,6 +417,7 @@
         private MetroFramework.Controls.MetroButton uxOpenMenuButton;
         private MetroFramework.Controls.MetroButton uxSaveAsMenuButton;
         private MetroFramework.Controls.MetroCheckBox uxRequiresLanguageUpdate;
+        private MetroFramework.Controls.MetroLabel uxDiscordCount;
     }
 }
 
