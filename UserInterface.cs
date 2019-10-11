@@ -22,6 +22,11 @@ namespace Announcements {
         private void UxConvert_Click(object sender, EventArgs e) {
             string[] list = uxRawInputBox.Text.Split('\n');
 
+            uxDiscordOutputBox.Clear();
+            uxHTMLOutputBox.Clear();
+            uxMySQLOutputBox.Clear();
+            uxGitHubOutputBox.Clear();
+
             OutputMySQL(list);
             OutputDiscord(list);
             OutputHtml(list);
