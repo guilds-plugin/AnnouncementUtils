@@ -47,17 +47,7 @@ namespace Announcements {
             // MYSQL OUTPUT BOX STOP
 
             // DISCORD OUTPUT BOX START
-            uxDiscordOutputBox.AppendText("**UPDATE**");
-            Skip(uxDiscordOutputBox);
-            Skip(uxDiscordOutputBox);
-            uxDiscordOutputBox.AppendText(uxUpdateTitleBox.Text);
-            Skip(uxDiscordOutputBox);
-            Skip(uxDiscordOutputBox);
-            OutputMethod(list, uxDiscordOutputBox, "**", "**");
-            Skip(uxDiscordOutputBox);
-            if (LangUpdate()) {
-                ImplementLanguageMessage(uxDiscordOutputBox, "```", "```");
-            }
+            MarkdownFormat(uxDiscordOutputBox, list);
             uxDiscordOutputBox.AppendText("**Guilds v" + uxVersionBox.Text + " is now live!**");
             Skip(uxDiscordOutputBox);
             uxDiscordOutputBox.AppendText("Plugin Page: https://www.spigotmc.org/resources/guilds.66176/");
@@ -70,6 +60,10 @@ namespace Announcements {
                 ImplementLanguageMessage(uxHTMLOutputBox, "[CODE]", "[/CODE]");
             }
             // HTML OUTPUT BOX END
+
+            // GitHub Output Box Start
+            MarkdownFormat(uxGitHubOutputBox, list);
+            // GitHub Output Box End
 
             // Set character count
             uxDiscordCount.Text = "Character Count: " + Convert.ToString(uxDiscordOutputBox.Text.Length) + "/2000";
@@ -218,6 +212,25 @@ namespace Announcements {
             uxDiscordOutputBox.Clear();
             uxMySQLOutputBox.Clear();
             uxHTMLOutputBox.Clear();
+        }
+
+        /// <summary>
+        /// Handles markdown format for Discord & GitHub format
+        /// </summary>
+        /// <param name="box">The box that is being outputted</param>
+        /// <param name="list">Contents of the changelog</param>
+        private void MarkdownFormat(MetroTextBox box, string[] list) {
+            box.AppendText("**UPDATE**");
+            Skip(box);
+            Skip(box);
+            box.AppendText(uxUpdateTitleBox.Text);
+            Skip(box);
+            Skip(box);
+            OutputMethod(list, box, "**", "**");
+            Skip(box);
+            if (LangUpdate()) {
+                ImplementLanguageMessage(box, "```", "```");
+            }
         }
     }
 }

@@ -43,6 +43,8 @@
             this.uxSaveAsMenuButton = new MetroFramework.Controls.MetroButton();
             this.uxRequiresLanguageUpdate = new MetroFramework.Controls.MetroCheckBox();
             this.uxDiscordCount = new MetroFramework.Controls.MetroLabel();
+            this.uxGitHubOutputBox = new MetroFramework.Controls.MetroTextBox();
+            this.uxGitHubLabel = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
             // uxVersionLabel
@@ -245,7 +247,7 @@
             this.uxDiscordOutputBox.Multiline = true;
             this.uxDiscordOutputBox.Name = "uxDiscordOutputBox";
             this.uxDiscordOutputBox.PasswordChar = '\0';
-            this.uxDiscordOutputBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.uxDiscordOutputBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.uxDiscordOutputBox.SelectedText = "";
             this.uxDiscordOutputBox.SelectionLength = 0;
             this.uxDiscordOutputBox.SelectionStart = 0;
@@ -277,7 +279,7 @@
             this.uxHTMLOutputBox.Multiline = true;
             this.uxHTMLOutputBox.Name = "uxHTMLOutputBox";
             this.uxHTMLOutputBox.PasswordChar = '\0';
-            this.uxHTMLOutputBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.uxHTMLOutputBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.uxHTMLOutputBox.SelectedText = "";
             this.uxHTMLOutputBox.SelectionLength = 0;
             this.uxHTMLOutputBox.SelectionStart = 0;
@@ -295,9 +297,9 @@
             // 
             // 
             this.uxMySQLOutputBox.CustomButton.Image = null;
-            this.uxMySQLOutputBox.CustomButton.Location = new System.Drawing.Point(12, 1);
+            this.uxMySQLOutputBox.CustomButton.Location = new System.Drawing.Point(248, 2);
             this.uxMySQLOutputBox.CustomButton.Name = "";
-            this.uxMySQLOutputBox.CustomButton.Size = new System.Drawing.Size(391, 391);
+            this.uxMySQLOutputBox.CustomButton.Size = new System.Drawing.Size(153, 153);
             this.uxMySQLOutputBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.uxMySQLOutputBox.CustomButton.TabIndex = 1;
             this.uxMySQLOutputBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -309,12 +311,12 @@
             this.uxMySQLOutputBox.Multiline = true;
             this.uxMySQLOutputBox.Name = "uxMySQLOutputBox";
             this.uxMySQLOutputBox.PasswordChar = '\0';
-            this.uxMySQLOutputBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.uxMySQLOutputBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.uxMySQLOutputBox.SelectedText = "";
             this.uxMySQLOutputBox.SelectionLength = 0;
             this.uxMySQLOutputBox.SelectionStart = 0;
             this.uxMySQLOutputBox.ShortcutsEnabled = true;
-            this.uxMySQLOutputBox.Size = new System.Drawing.Size(404, 393);
+            this.uxMySQLOutputBox.Size = new System.Drawing.Size(404, 182);
             this.uxMySQLOutputBox.TabIndex = 28;
             this.uxMySQLOutputBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.uxMySQLOutputBox.UseSelectable = true;
@@ -364,12 +366,56 @@
             this.uxDiscordCount.Text = "Character Count: 0/2000";
             this.uxDiscordCount.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
+            // uxGitHubOutputBox
+            // 
+            // 
+            // 
+            // 
+            this.uxGitHubOutputBox.CustomButton.Image = null;
+            this.uxGitHubOutputBox.CustomButton.Location = new System.Drawing.Point(244, 1);
+            this.uxGitHubOutputBox.CustomButton.Name = "";
+            this.uxGitHubOutputBox.CustomButton.Size = new System.Drawing.Size(159, 159);
+            this.uxGitHubOutputBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.uxGitHubOutputBox.CustomButton.TabIndex = 1;
+            this.uxGitHubOutputBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.uxGitHubOutputBox.CustomButton.UseSelectable = true;
+            this.uxGitHubOutputBox.CustomButton.Visible = false;
+            this.uxGitHubOutputBox.Lines = new string[0];
+            this.uxGitHubOutputBox.Location = new System.Drawing.Point(1351, 428);
+            this.uxGitHubOutputBox.MaxLength = 32767;
+            this.uxGitHubOutputBox.Multiline = true;
+            this.uxGitHubOutputBox.Name = "uxGitHubOutputBox";
+            this.uxGitHubOutputBox.PasswordChar = '\0';
+            this.uxGitHubOutputBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.uxGitHubOutputBox.SelectedText = "";
+            this.uxGitHubOutputBox.SelectionLength = 0;
+            this.uxGitHubOutputBox.SelectionStart = 0;
+            this.uxGitHubOutputBox.ShortcutsEnabled = true;
+            this.uxGitHubOutputBox.Size = new System.Drawing.Size(404, 161);
+            this.uxGitHubOutputBox.TabIndex = 34;
+            this.uxGitHubOutputBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.uxGitHubOutputBox.UseSelectable = true;
+            this.uxGitHubOutputBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.uxGitHubOutputBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // uxGitHubLabel
+            // 
+            this.uxGitHubLabel.AutoSize = true;
+            this.uxGitHubLabel.Location = new System.Drawing.Point(1518, 393);
+            this.uxGitHubLabel.Name = "uxGitHubLabel";
+            this.uxGitHubLabel.Size = new System.Drawing.Size(94, 19);
+            this.uxGitHubLabel.TabIndex = 33;
+            this.uxGitHubLabel.Text = "GitHub Output";
+            this.uxGitHubLabel.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
             // Announcements
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1813, 643);
+            this.Controls.Add(this.uxGitHubOutputBox);
+            this.Controls.Add(this.uxGitHubLabel);
             this.Controls.Add(this.uxDiscordCount);
             this.Controls.Add(this.uxRequiresLanguageUpdate);
             this.Controls.Add(this.uxSaveAsMenuButton);
@@ -418,6 +464,8 @@
         private MetroFramework.Controls.MetroButton uxSaveAsMenuButton;
         private MetroFramework.Controls.MetroCheckBox uxRequiresLanguageUpdate;
         private MetroFramework.Controls.MetroLabel uxDiscordCount;
+        private MetroFramework.Controls.MetroTextBox uxGitHubOutputBox;
+        private MetroFramework.Controls.MetroLabel uxGitHubLabel;
     }
 }
 
