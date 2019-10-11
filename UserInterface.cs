@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using MetroFramework.Controls;
@@ -28,22 +29,22 @@ namespace Announcements {
             // MYSQL OUTPUT BOX START
 
             // Create variable for MySQL output
-            string mysqlOutput = "";
+            StringBuilder sb = new StringBuilder();
             for (int i = 0; i < list.Length; i++) {
                 string line = list[i];
                 if (string.IsNullOrWhiteSpace(line)) {
-                    mysqlOutput += "\\n";
+                    sb.Append("\\n");
                 }
                 else {
                     if (IsHeader(line)) {
-                        mysqlOutput += "&6&l" + line + "\\n";
+                        sb.Append("&6&l" + line + "\\n");
                     }
                     else {
-                        mysqlOutput += "&a- " + line + "\\n";
+                        sb.Append("&a- " + line + "\\n");
                     }
                 }
             }
-            uxMySQLOutputBox.Text = mysqlOutput;
+            uxMySQLOutputBox.Text = sb.ToString();
             // MYSQL OUTPUT BOX STOP
 
             // DISCORD OUTPUT BOX START
