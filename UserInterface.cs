@@ -20,59 +20,12 @@ namespace Announcements {
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void UxConvert_Click(object sender, EventArgs e) {
-            // Set the current text in the input box to a variable
-            string originalText = uxRawInputBox.Text;
+            string[] list = uxRawInputBox.Text.Split('\n');
 
-            // Split the current text by new lines.
-            string[] list = originalText.Split('\n');
-
-            // MYSQL OUTPUT BOX START
-
-            // Create variable for MySQL output
-            StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < list.Length; i++) {
-                string line = list[i];
-                if (string.IsNullOrWhiteSpace(line)) {
-                    sb.Append("\\n");
-                }
-                else {
-                    if (IsHeader(line)) {
-                        sb.Append("&6&l" + line + "\\n");
-                    }
-                    else {
-                        sb.Append("&a- " + line + "\\n");
-                    }
-                }
-            }
-            uxMySQLOutputBox.Text = sb.ToString();
-            // MYSQL OUTPUT BOX STOP
-
-            // DISCORD OUTPUT BOX START
-            MarkdownFormat(uxDiscordOutputBox, list);
-            uxDiscordOutputBox.AppendText("**Guilds v" + uxVersionBox.Text + " is now live!**");
-            Skip(uxDiscordOutputBox);
-            uxDiscordOutputBox.AppendText("Plugin Page: https://www.spigotmc.org/resources/guilds.66176/");
-            // DISCORD OUTPUT BOX END
-
-            // HTML OUTPUT BOX START
-            OutputMethod(list, uxHTMLOutputBox, "[B]", "[/B]");
-            Skip(uxHTMLOutputBox);
-            if (LangUpdate()) {
-                ImplementLanguageMessage(uxHTMLOutputBox, "[CODE]", "[/CODE]");
-            }
-            // HTML OUTPUT BOX END
-
-            // GitHub Output Box Start
+            OutputMySQL(list);
+            OutputDiscord(list);
+            OutputHtml(list);
             MarkdownFormat(uxGitHubOutputBox, list);
-            // GitHub Output Box End
-
-            // Set character count
-            uxDiscordCount.Text = "Character Count: " + Convert.ToString(uxDiscordOutputBox.Text.Length) + "/2000";
-
-
-            // Set suggested file name for saving & default ext
-            uxSaveFileDialog.DefaultExt = "txt";
-            uxSaveFileDialog.FileName = uxVersionBox.Text;
         }
 
         /// <summary>
@@ -231,6 +184,54 @@ namespace Announcements {
             Skip(box);
             if (LangUpdate()) {
                 ImplementLanguageMessage(box, "```", "```");
+            }
+        }
+
+        /// <summary>
+        /// Easy handling of creating the output for the mysql text box
+        /// </summary>
+        /// <param name="list">List of data</param>
+        private void OutputMySQL(string[] list) {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < list.Length; i++) {
+                string line = list[i];
+                if (string.IsNullOrWhiteSpace(line)) {
+                    sb.Append("\\n");
+                }
+                else {
+                    if (IsHeader(line)) {
+                        sb.Append("&6&l" + line + "\\n");
+                    }
+                    else {
+                        sb.Append("&a- " + line + "\\n");
+                    }
+                }
+            }
+            uxMySQLOutputBox.Text = sb.ToString();
+        }
+
+        /// <summary>
+        /// Easy handling of creating the output for the discord text box
+        /// </summary>
+        /// <param name="list">List of data</param>
+        private void OutputDiscord(string[] list) {
+            MarkdownFormat(uxDiscordOutputBox, list);
+            uxDiscordOutputBox.AppendText("**Guilds v" + uxVersionBox.Text + " is now live!**");
+            Skip(uxDiscordOutputBox);
+            uxDiscordOutputBox.AppendText("Plugin Page: https://www.spigotmc.org/resources/guilds.66176/");
+
+            uxDiscordCount.Text = "Character Count: " + Convert.ToString(uxDiscordOutputBox.Text.Length) + "/2000";
+        }
+
+        /// <summary>
+        /// Easy handling of creating the output for the html text box
+        /// </summary>
+        /// <param name="list">List of data</param>
+        private void OutputHtml(string[] list) {
+            OutputMethod(list, uxHTMLOutputBox, "[B]", "[/B]");
+            Skip(uxHTMLOutputBox);
+            if (LangUpdate()) {
+                ImplementLanguageMessage(uxHTMLOutputBox, "[CODE]", "[/CODE]");
             }
         }
     }
