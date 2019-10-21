@@ -171,6 +171,7 @@ namespace Announcements {
             uxDiscordOutputBox.Clear();
             uxMySQLOutputBox.Clear();
             uxHTMLOutputBox.Clear();
+            uxGitHubOutputBox.Clear();
         }
 
         /// <summary>
