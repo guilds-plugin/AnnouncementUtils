@@ -97,7 +97,7 @@ namespace Announcements {
                 try {
                     string fn = @uxOpenFileDialog.FileName;
                     string contents = File.ReadAllText(fn);
-                    string[] split = contents.Split(',');
+                    string[] split = contents.Split('~');
                     uxVersionBox.Text = split[0];
                     uxUpdateTitleBox.Text = split[1];
                     uxRawInputBox.Text = split[2];
@@ -118,7 +118,7 @@ namespace Announcements {
             if (uxSaveFileDialog.ShowDialog() == DialogResult.OK) {
                 try {
                     string fn = uxSaveFileDialog.FileName;
-                    string contents = uxVersionBox.Text + "," + uxUpdateTitleBox.Text + "," + uxRawInputBox.Text + "," + uxRequiresLanguageUpdate.Checked;
+                    string contents = uxVersionBox.Text + "~" + uxUpdateTitleBox.Text + "~" + uxRawInputBox.Text + "~" + uxRequiresLanguageUpdate.Checked;
                     File.WriteAllText(fn, contents);
                 }
                 catch (Exception ex) {
@@ -172,6 +172,7 @@ namespace Announcements {
             uxMySQLOutputBox.Clear();
             uxHTMLOutputBox.Clear();
             uxGitHubOutputBox.Clear();
+            uxRequiresLanguageUpdate.Checked = false;
         }
 
         /// <summary>

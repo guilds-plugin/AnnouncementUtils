@@ -215,7 +215,7 @@
             this.uxRawInputBox.Multiline = true;
             this.uxRawInputBox.Name = "uxRawInputBox";
             this.uxRawInputBox.PasswordChar = '\0';
-            this.uxRawInputBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.uxRawInputBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.uxRawInputBox.SelectedText = "";
             this.uxRawInputBox.SelectionLength = 0;
             this.uxRawInputBox.SelectionStart = 0;
@@ -297,9 +297,9 @@
             // 
             // 
             this.uxMySQLOutputBox.CustomButton.Image = null;
-            this.uxMySQLOutputBox.CustomButton.Location = new System.Drawing.Point(248, 2);
+            this.uxMySQLOutputBox.CustomButton.Location = new System.Drawing.Point(224, 2);
             this.uxMySQLOutputBox.CustomButton.Name = "";
-            this.uxMySQLOutputBox.CustomButton.Size = new System.Drawing.Size(153, 153);
+            this.uxMySQLOutputBox.CustomButton.Size = new System.Drawing.Size(177, 177);
             this.uxMySQLOutputBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.uxMySQLOutputBox.CustomButton.TabIndex = 1;
             this.uxMySQLOutputBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
