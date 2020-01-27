@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.IO;
 using System.Text;
 using System.Threading;
@@ -219,13 +220,13 @@ namespace Announcements {
 
         /// <summary>
         /// Easy handling of creating the output for the discord text box
-        /// </summary>
+        /// </summary>T
         /// <param name="list">List of data</param>
         private void OutputDiscord(string[] list) {
             MarkdownFormat(uxDiscordOutputBox, list);
-            uxDiscordOutputBox.AppendText("**Guilds v" + uxVersionBox.Text + " is now live!**");
+            uxDiscordOutputBox.AppendText("**" + ConfigurationManager.AppSettings.Get("project_name") + " v" + uxVersionBox.Text + " is now live!**");
             Skip(uxDiscordOutputBox);
-            uxDiscordOutputBox.AppendText("Plugin Page: https://www.spigotmc.org/resources/guilds.66176/");
+            uxDiscordOutputBox.AppendText("Plugin Page: " + ConfigurationManager.AppSettings.Get("project_page"));
 
             uxDiscordCount.Text = "Character Count: " + Convert.ToString(uxDiscordOutputBox.Text.Length) + "/2000";
         }
