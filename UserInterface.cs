@@ -13,6 +13,28 @@ namespace Announcements {
             InitializeComponent();
             // Set the project icon to the icon in the resources folder
             this.Icon = Properties.Resources.icon;
+            
+            bool lang = Convert.ToBoolean(ConfigurationManager.AppSettings.Get("show_language_box"));
+            bool discord = Convert.ToBoolean(ConfigurationManager.AppSettings.Get("show_discord_output"));
+            bool html = Convert.ToBoolean(ConfigurationManager.AppSettings.Get("show_html_output"));
+            bool mysql = Convert.ToBoolean(ConfigurationManager.AppSettings.Get("show_mysql_output"));
+            bool github = Convert.ToBoolean(ConfigurationManager.AppSettings.Get("show_github_output"));
+
+            this.uxRequiresLanguageUpdate.Visible = lang;
+
+            this.uxDiscordOuputLabel.Visible = discord;
+            this.uxDiscordCount.Visible = discord;
+            this.uxDiscordOutputBox.Visible = discord;
+
+            this.uxHTMLOutputBox.Visible = html;
+            this.uxHTMLOutputLabel.Visible = html;
+
+            this.uxMySQLOutputBox.Visible = mysql;
+            this.uxMySQLOutputLabel.Visible = mysql;
+
+            this.uxGitHubLabel.Visible = github;
+            this.uxGitHubOutputBox.Visible = github;
+
         }
 
         /// <summary>
