@@ -41,7 +41,6 @@
             this.uxMySQLOutputBox = new MetroFramework.Controls.MetroTextBox();
             this.uxOpenMenuButton = new MetroFramework.Controls.MetroButton();
             this.uxSaveAsMenuButton = new MetroFramework.Controls.MetroButton();
-            this.uxRequiresLanguageUpdate = new MetroFramework.Controls.MetroCheckBox();
             this.uxDiscordCount = new MetroFramework.Controls.MetroLabel();
             this.uxGitHubOutputBox = new MetroFramework.Controls.MetroTextBox();
             this.uxGitHubLabel = new MetroFramework.Controls.MetroLabel();
@@ -345,17 +344,6 @@
             this.uxSaveAsMenuButton.UseSelectable = true;
             this.uxSaveAsMenuButton.Click += new System.EventHandler(this.UxSaveAsMenuButton_Click);
             // 
-            // uxRequiresLanguageUpdate
-            // 
-            this.uxRequiresLanguageUpdate.AutoSize = true;
-            this.uxRequiresLanguageUpdate.Location = new System.Drawing.Point(295, 23);
-            this.uxRequiresLanguageUpdate.Name = "uxRequiresLanguageUpdate";
-            this.uxRequiresLanguageUpdate.Size = new System.Drawing.Size(159, 15);
-            this.uxRequiresLanguageUpdate.TabIndex = 31;
-            this.uxRequiresLanguageUpdate.Text = "Require Language Update";
-            this.uxRequiresLanguageUpdate.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.uxRequiresLanguageUpdate.UseSelectable = true;
-            // 
             // uxDiscordCount
             // 
             this.uxDiscordCount.AutoSize = true;
@@ -417,7 +405,6 @@
             this.Controls.Add(this.uxGitHubOutputBox);
             this.Controls.Add(this.uxGitHubLabel);
             this.Controls.Add(this.uxDiscordCount);
-            this.Controls.Add(this.uxRequiresLanguageUpdate);
             this.Controls.Add(this.uxSaveAsMenuButton);
             this.Controls.Add(this.uxOpenMenuButton);
             this.Controls.Add(this.uxMySQLOutputBox);
@@ -462,7 +449,6 @@
         private MetroFramework.Controls.MetroTextBox uxMySQLOutputBox;
         private MetroFramework.Controls.MetroButton uxOpenMenuButton;
         private MetroFramework.Controls.MetroButton uxSaveAsMenuButton;
-        private MetroFramework.Controls.MetroCheckBox uxRequiresLanguageUpdate;
         private MetroFramework.Controls.MetroLabel uxDiscordCount;
         private MetroFramework.Controls.MetroTextBox uxGitHubOutputBox;
         private MetroFramework.Controls.MetroLabel uxGitHubLabel;

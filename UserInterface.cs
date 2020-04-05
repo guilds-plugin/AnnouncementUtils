@@ -14,13 +14,10 @@ namespace Announcements {
             // Set the project icon to the icon in the resources folder
             this.Icon = Properties.Resources.icon;
             
-            bool lang = Convert.ToBoolean(ConfigurationManager.AppSettings.Get("show_language_box"));
             bool discord = Convert.ToBoolean(ConfigurationManager.AppSettings.Get("show_discord_output"));
             bool html = Convert.ToBoolean(ConfigurationManager.AppSettings.Get("show_html_output"));
             bool mysql = Convert.ToBoolean(ConfigurationManager.AppSettings.Get("show_mysql_output"));
             bool github = Convert.ToBoolean(ConfigurationManager.AppSettings.Get("show_github_output"));
-
-            this.uxRequiresLanguageUpdate.Visible = lang;
 
             this.uxDiscordOuputLabel.Visible = discord;
             this.uxDiscordCount.Visible = discord;
@@ -54,33 +51,6 @@ namespace Announcements {
             OutputDiscord(list);
             OutputHtml(list);
             MarkdownFormat(uxGitHubOutputBox, list);
-        }
-
-        /// <summary>
-        /// Easy way to check if language update or not
-        /// </summary>
-        /// <returns>Update contains language update or not</returns>
-        private bool LangUpdate() {
-            return uxRequiresLanguageUpdate.Checked;
-        }
-
-        /// <summary>
-        /// Handles generating the output text for letting users know about language updates
-        /// </summary>
-        /// <param name="box">The box to modify</param>
-        /// <param name="startText">The start text for the code</param>
-        /// <param name="endText">The end text for the code</param>
-        private void ImplementLanguageMessage(MetroTextBox box, string startText, string endText) {
-            box.AppendText("Note: This update requires langauge updates");
-            Skip(box);
-            box.AppendText(startText);
-            Skip(box);
-            box.AppendText("1) guild console update-languages");
-            Skip(box);
-            box.AppendText("2) guild confirm");
-            Skip(box);
-            box.AppendText(endText);
-            Skip(box);
         }
 
         /// <summary>
@@ -124,7 +94,6 @@ namespace Announcements {
                     uxVersionBox.Text = split[0];
                     uxUpdateTitleBox.Text = split[1];
                     uxRawInputBox.Text = split[2];
-                    uxRequiresLanguageUpdate.Checked = Convert.ToBoolean(split[3]);
                 }
                 catch (Exception ex) {
                     sendError(ex);
@@ -141,7 +110,7 @@ namespace Announcements {
             if (uxSaveFileDialog.ShowDialog() == DialogResult.OK) {
                 try {
                     string fn = uxSaveFileDialog.FileName;
-                    string contents = uxVersionBox.Text + "~" + uxUpdateTitleBox.Text + "~" + uxRawInputBox.Text + "~" + uxRequiresLanguageUpdate.Checked;
+                    string contents = uxVersionBox.Text + "~" + uxUpdateTitleBox.Text + "~" + uxRawInputBox.Text;
                     File.WriteAllText(fn, contents);
                 }
                 catch (Exception ex) {
@@ -195,7 +164,6 @@ namespace Announcements {
             uxMySQLOutputBox.Clear();
             uxHTMLOutputBox.Clear();
             uxGitHubOutputBox.Clear();
-            uxRequiresLanguageUpdate.Checked = false;
         }
 
         /// <summary>
@@ -212,9 +180,6 @@ namespace Announcements {
             Skip(box);
             OutputMethod(list, box, "**", "**");
             Skip(box);
-            if (LangUpdate()) {
-                ImplementLanguageMessage(box, "```", "```");
-            }
         }
 
         /// <summary>
@@ -260,9 +225,6 @@ namespace Announcements {
         private void OutputHtml(string[] list) {
             OutputMethod(list, uxHTMLOutputBox, "[B]", "[/B]");
             Skip(uxHTMLOutputBox);
-            if (LangUpdate()) {
-                ImplementLanguageMessage(uxHTMLOutputBox, "[CODE]", "[/CODE]");
-            }
         }
     }
 }
