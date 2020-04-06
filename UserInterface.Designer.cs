@@ -1,16 +1,24 @@
-﻿namespace Announcements {
-    partial class Announcements {
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+using MetroFramework.Controls;
+
+namespace Announcements
+{
+    partial class Announcements
+    {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -22,7 +30,8 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
+        private void InitializeComponent()
+        {
             this.uxOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.uxSaveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.uxVersionLabel = new MetroFramework.Controls.MetroLabel();
@@ -45,9 +54,9 @@
             this.uxGitHubOutputBox = new MetroFramework.Controls.MetroTextBox();
             this.uxGitHubLabel = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
-            // 
+            //
             // uxVersionLabel
-            // 
+            //
             this.uxVersionLabel.AutoSize = true;
             this.uxVersionLabel.Location = new System.Drawing.Point(65, 60);
             this.uxVersionLabel.Name = "uxVersionLabel";
@@ -55,12 +64,12 @@
             this.uxVersionLabel.TabIndex = 15;
             this.uxVersionLabel.Text = "Version";
             this.uxVersionLabel.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
+            //
             // uxVersionBox
-            // 
-            // 
-            // 
-            // 
+            //
+            //
+            //
+            //
             this.uxVersionBox.CustomButton.Image = null;
             this.uxVersionBox.CustomButton.Location = new System.Drawing.Point(125, 1);
             this.uxVersionBox.CustomButton.Name = "";
@@ -87,9 +96,9 @@
             this.uxVersionBox.UseSelectable = true;
             this.uxVersionBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.uxVersionBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
+            //
             // uxUpdateTitleLabel
-            // 
+            //
             this.uxUpdateTitleLabel.AutoSize = true;
             this.uxUpdateTitleLabel.Location = new System.Drawing.Point(295, 60);
             this.uxUpdateTitleLabel.Name = "uxUpdateTitleLabel";
@@ -97,12 +106,12 @@
             this.uxUpdateTitleLabel.TabIndex = 17;
             this.uxUpdateTitleLabel.Text = "Update Title";
             this.uxUpdateTitleLabel.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
+            //
             // uxUpdateTitleBox
-            // 
-            // 
-            // 
-            // 
+            //
+            //
+            //
+            //
             this.uxUpdateTitleBox.CustomButton.Image = null;
             this.uxUpdateTitleBox.CustomButton.Location = new System.Drawing.Point(172, 1);
             this.uxUpdateTitleBox.CustomButton.Name = "";
@@ -128,9 +137,9 @@
             this.uxUpdateTitleBox.UseSelectable = true;
             this.uxUpdateTitleBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.uxUpdateTitleBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
+            //
             // uxConvert
-            // 
+            //
             this.uxConvert.Location = new System.Drawing.Point(533, 33);
             this.uxConvert.Name = "uxConvert";
             this.uxConvert.Size = new System.Drawing.Size(446, 85);
@@ -139,9 +148,9 @@
             this.uxConvert.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.uxConvert.UseSelectable = true;
             this.uxConvert.Click += new System.EventHandler(this.UxConvert_Click);
-            // 
+            //
             // uxClearButton
-            // 
+            //
             this.uxClearButton.Location = new System.Drawing.Point(1014, 33);
             this.uxClearButton.Name = "uxClearButton";
             this.uxClearButton.Size = new System.Drawing.Size(446, 85);
@@ -150,9 +159,9 @@
             this.uxClearButton.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.uxClearButton.UseSelectable = true;
             this.uxClearButton.Click += new System.EventHandler(this.UxClearButton_Click);
-            // 
+            //
             // uxRawInput
-            // 
+            //
             this.uxRawInput.AutoSize = true;
             this.uxRawInput.Location = new System.Drawing.Point(134, 161);
             this.uxRawInput.Name = "uxRawInput";
@@ -160,9 +169,9 @@
             this.uxRawInput.TabIndex = 21;
             this.uxRawInput.Text = "Insert Text Here";
             this.uxRawInput.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
+            //
             // uxDiscordOuputLabel
-            // 
+            //
             this.uxDiscordOuputLabel.AutoSize = true;
             this.uxDiscordOuputLabel.Location = new System.Drawing.Point(617, 161);
             this.uxDiscordOuputLabel.Name = "uxDiscordOuputLabel";
@@ -170,9 +179,9 @@
             this.uxDiscordOuputLabel.TabIndex = 22;
             this.uxDiscordOuputLabel.Text = "Discord Output";
             this.uxDiscordOuputLabel.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
+            //
             // uxHTMLOutputLabel
-            // 
+            //
             this.uxHTMLOutputLabel.AutoSize = true;
             this.uxHTMLOutputLabel.Location = new System.Drawing.Point(1061, 161);
             this.uxHTMLOutputLabel.Name = "uxHTMLOutputLabel";
@@ -180,9 +189,9 @@
             this.uxHTMLOutputLabel.TabIndex = 23;
             this.uxHTMLOutputLabel.Text = "HTML Output";
             this.uxHTMLOutputLabel.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
+            //
             // uxMySQLOutputLabel
-            // 
+            //
             this.uxMySQLOutputLabel.AutoSize = true;
             this.uxMySQLOutputLabel.Location = new System.Drawing.Point(1518, 161);
             this.uxMySQLOutputLabel.Name = "uxMySQLOutputLabel";
@@ -190,15 +199,15 @@
             this.uxMySQLOutputLabel.TabIndex = 24;
             this.uxMySQLOutputLabel.Text = "MySQL Output";
             this.uxMySQLOutputLabel.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
+            //
             // uxRawInputBox
-            // 
-            this.uxRawInputBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            //
+            this.uxRawInputBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            // 
-            // 
-            // 
+            //
+            //
+            //
             this.uxRawInputBox.CustomButton.Image = null;
             this.uxRawInputBox.CustomButton.Location = new System.Drawing.Point(12, 1);
             this.uxRawInputBox.CustomButton.Name = "";
@@ -225,12 +234,12 @@
             this.uxRawInputBox.UseSelectable = true;
             this.uxRawInputBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.uxRawInputBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
+            //
             // uxDiscordOutputBox
-            // 
-            // 
-            // 
-            // 
+            //
+            //
+            //
+            //
             this.uxDiscordOutputBox.CustomButton.Image = null;
             this.uxDiscordOutputBox.CustomButton.Location = new System.Drawing.Point(12, 1);
             this.uxDiscordOutputBox.CustomButton.Name = "";
@@ -257,12 +266,12 @@
             this.uxDiscordOutputBox.UseSelectable = true;
             this.uxDiscordOutputBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.uxDiscordOutputBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
+            //
             // uxHTMLOutputBox
-            // 
-            // 
-            // 
-            // 
+            //
+            //
+            //
+            //
             this.uxHTMLOutputBox.CustomButton.Image = null;
             this.uxHTMLOutputBox.CustomButton.Location = new System.Drawing.Point(12, 1);
             this.uxHTMLOutputBox.CustomButton.Name = "";
@@ -289,12 +298,12 @@
             this.uxHTMLOutputBox.UseSelectable = true;
             this.uxHTMLOutputBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.uxHTMLOutputBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
+            //
             // uxMySQLOutputBox
-            // 
-            // 
-            // 
-            // 
+            //
+            //
+            //
+            //
             this.uxMySQLOutputBox.CustomButton.Image = null;
             this.uxMySQLOutputBox.CustomButton.Location = new System.Drawing.Point(224, 2);
             this.uxMySQLOutputBox.CustomButton.Name = "";
@@ -321,9 +330,9 @@
             this.uxMySQLOutputBox.UseSelectable = true;
             this.uxMySQLOutputBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.uxMySQLOutputBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
+            //
             // uxOpenMenuButton
-            // 
+            //
             this.uxOpenMenuButton.Location = new System.Drawing.Point(1518, 33);
             this.uxOpenMenuButton.Name = "uxOpenMenuButton";
             this.uxOpenMenuButton.Size = new System.Drawing.Size(180, 37);
@@ -332,9 +341,9 @@
             this.uxOpenMenuButton.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.uxOpenMenuButton.UseSelectable = true;
             this.uxOpenMenuButton.Click += new System.EventHandler(this.UxOpenMenuButton_Click);
-            // 
+            //
             // uxSaveAsMenuButton
-            // 
+            //
             this.uxSaveAsMenuButton.Location = new System.Drawing.Point(1518, 81);
             this.uxSaveAsMenuButton.Name = "uxSaveAsMenuButton";
             this.uxSaveAsMenuButton.Size = new System.Drawing.Size(180, 37);
@@ -343,9 +352,9 @@
             this.uxSaveAsMenuButton.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.uxSaveAsMenuButton.UseSelectable = true;
             this.uxSaveAsMenuButton.Click += new System.EventHandler(this.UxSaveAsMenuButton_Click);
-            // 
+            //
             // uxDiscordCount
-            // 
+            //
             this.uxDiscordCount.AutoSize = true;
             this.uxDiscordCount.Location = new System.Drawing.Point(467, 604);
             this.uxDiscordCount.Name = "uxDiscordCount";
@@ -353,12 +362,12 @@
             this.uxDiscordCount.TabIndex = 32;
             this.uxDiscordCount.Text = "Character Count: 0/2000";
             this.uxDiscordCount.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
+            //
             // uxGitHubOutputBox
-            // 
-            // 
-            // 
-            // 
+            //
+            //
+            //
+            //
             this.uxGitHubOutputBox.CustomButton.Image = null;
             this.uxGitHubOutputBox.CustomButton.Location = new System.Drawing.Point(244, 1);
             this.uxGitHubOutputBox.CustomButton.Name = "";
@@ -385,9 +394,9 @@
             this.uxGitHubOutputBox.UseSelectable = true;
             this.uxGitHubOutputBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.uxGitHubOutputBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
+            //
             // uxGitHubLabel
-            // 
+            //
             this.uxGitHubLabel.AutoSize = true;
             this.uxGitHubLabel.Location = new System.Drawing.Point(1518, 393);
             this.uxGitHubLabel.Name = "uxGitHubLabel";
@@ -395,9 +404,9 @@
             this.uxGitHubLabel.TabIndex = 33;
             this.uxGitHubLabel.Text = "GitHub Output";
             this.uxGitHubLabel.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
+            //
             // Announcements
-            // 
+            //
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -431,27 +440,26 @@
         }
 
         #endregion
-        private System.Windows.Forms.OpenFileDialog uxOpenFileDialog;
-        private System.Windows.Forms.SaveFileDialog uxSaveFileDialog;
-        private MetroFramework.Controls.MetroLabel uxVersionLabel;
-        private MetroFramework.Controls.MetroTextBox uxVersionBox;
-        private MetroFramework.Controls.MetroLabel uxUpdateTitleLabel;
-        private MetroFramework.Controls.MetroTextBox uxUpdateTitleBox;
-        private MetroFramework.Controls.MetroButton uxConvert;
-        private MetroFramework.Controls.MetroButton uxClearButton;
-        private MetroFramework.Controls.MetroLabel uxRawInput;
-        private MetroFramework.Controls.MetroLabel uxDiscordOuputLabel;
-        private MetroFramework.Controls.MetroLabel uxHTMLOutputLabel;
-        private MetroFramework.Controls.MetroLabel uxMySQLOutputLabel;
-        private MetroFramework.Controls.MetroTextBox uxRawInputBox;
-        private MetroFramework.Controls.MetroTextBox uxDiscordOutputBox;
-        private MetroFramework.Controls.MetroTextBox uxHTMLOutputBox;
-        private MetroFramework.Controls.MetroTextBox uxMySQLOutputBox;
-        private MetroFramework.Controls.MetroButton uxOpenMenuButton;
-        private MetroFramework.Controls.MetroButton uxSaveAsMenuButton;
-        private MetroFramework.Controls.MetroLabel uxDiscordCount;
-        private MetroFramework.Controls.MetroTextBox uxGitHubOutputBox;
-        private MetroFramework.Controls.MetroLabel uxGitHubLabel;
+        private OpenFileDialog uxOpenFileDialog;
+        private SaveFileDialog uxSaveFileDialog;
+        private MetroLabel uxVersionLabel;
+        private MetroTextBox uxVersionBox;
+        private MetroLabel uxUpdateTitleLabel;
+        private MetroTextBox uxUpdateTitleBox;
+        private MetroButton uxConvert;
+        private MetroButton uxClearButton;
+        private MetroLabel uxRawInput;
+        private MetroLabel uxDiscordOuputLabel;
+        private MetroLabel uxHTMLOutputLabel;
+        private MetroLabel uxMySQLOutputLabel;
+        private MetroTextBox uxRawInputBox;
+        private MetroTextBox uxDiscordOutputBox;
+        private MetroTextBox uxHTMLOutputBox;
+        private MetroTextBox uxMySQLOutputBox;
+        private MetroButton uxOpenMenuButton;
+        private MetroButton uxSaveAsMenuButton;
+        private MetroLabel uxDiscordCount;
+        private MetroTextBox uxGitHubOutputBox;
+        private MetroLabel uxGitHubLabel;
     }
 }
-
