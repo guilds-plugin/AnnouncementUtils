@@ -253,7 +253,9 @@ namespace Announcements
                    line.Contains("Bug Fixes") ||
                    line.Contains("Changes") ||
                    line.Contains("Note") ||
-                   line.Contains("Known Issues");
+                   line.Contains("Known Issues") ||
+                   line.Contains("Language") ||
+                   line.Contains("API");
         }
 
         /// <summary>
